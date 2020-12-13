@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table border="1">
+    <thead>
+    <tr>
+        <td>编号</td>
+        <td>用户名</td>
+        <td>密码</td>
+        <td>index</td>
+        <td>count</td>
+        <td>size</td>
+        <td>even</td>
+        <td>odd</td>
+        <td>first</td>
+        <td>last</td>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="users, var : ${listUsers}">
+        <td th:text="${users.id }"></td>
+        <td th:text="${users.username }"></td>
+        <td th:text="${users.password  }"></td>
+        <td th:text="${var.index }"></td>
+        <td th:text="${var.count }"></td>
+        <td th:text="${var.size }"></td>
+        <td th:text="${var.even }"></td>
+        <td th:text="${var.odd }"></td>
+        <td th:text="${var.first }"></td>
+        <td th:text="${var.last }"></td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>

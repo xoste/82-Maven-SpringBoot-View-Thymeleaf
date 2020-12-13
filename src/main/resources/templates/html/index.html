@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Title</title>
+</head>
+<body>
+index.html<hr/>
+<span th:text="${msg}"></span>
+文本：<input type="text" th:value="${msg}">
+空文本：<input type="text" th:value="${#strings.isEmpty(msg)}">
+文本包含T：<input type="text" th:value="${#strings.contains(msg, 'T')}">
+文本不包含t：<input type="text" th:value="${#strings.contains(msg, 'T')}">
+返回字符串的长度：<input type="text" th:value="${#strings.length(msg)}">
+以T开头：<input type="text" th:value="${#strings.startsWith(msg, 'T')}">
+以t开头：<input type="text" th:value="${#strings.endsWith(msg, 't')}">
+查找‘h’的位索引置：<input type="text" th:value="${#strings.indexOf(msg, 'h')}">
+截取Thymeleaf：<input type="text" th:value="${#strings.substring(msg,0, 9)}">
+截取从'第'开始的字符串：<input type="text" th:value="${#strings.substring(msg, 10)}">
+字符串转大写：<input type="text" th:value="${#strings.toUpperCase(msg)}">
+字符串转小写：<input type="text" th:value="${#strings.toLowerCase(msg)}">
+格式化日期，以默认浏览器格式为主：<span><input type="text" th:value="${#dates.format(date, 'yyyy/MM/dd hh:mm:ss')}"></span>
+格式化 年 日期：<span><input type="text" th:value="${#dates.year(date)}"></span>
+格式化 月 日期：<span><input type="text" th:value="${#dates.month(date)}"></span>
+格式化 日 日期：<span><input type="text" th:value="${#dates.day(date)}"></span>
+</body>
+</html>

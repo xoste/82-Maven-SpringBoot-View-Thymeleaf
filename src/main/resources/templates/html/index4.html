@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table border="1">
+    <thead>
+    <tr>
+        <td>编号</td>
+        <td>用户</td>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="users : ${mapUsers}">
+        <td th:each="entry : ${users}" th:text="${entry.key}"></td>
+        <td th:each="entry : ${users}" th:text="${entry.value}"></td>
+    </tr>
+    </tbody>
+</table><hr/>
+<table border="1">
+    <thead>
+    <tr>
+        <td>map</td>
+        <td>编号</td>
+        <td>用户名</td>
+        <td>密码</td>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="users : ${mapUsers}">
+        <td th:each="entry : ${users}" th:text="${entry.key}"></td>
+        <td th:each="entry : ${users}" th:text="${entry.value.id}"></td>
+        <td th:each="entry : ${users}" th:text="${entry.value.username}"></td>
+        <td th:each="entry : ${users}" th:text="${entry.value.password}"></td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>
